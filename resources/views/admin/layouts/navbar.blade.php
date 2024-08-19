@@ -111,5 +111,23 @@
             </a>
         </li>
 
+
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="nav-icon fas fa-user-alt"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">{{ Auth::user() ? Auth::user()->name : '' }}</span>
+                <div class="dropdown-divider"></div>
+                <a href="{{ route('admin.auth_admin_logout') }}" class="dropdown-item">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span class="float-right  text-sm">Logout</span>
+                </a>
+                <div class="dropdown-divider"></div>
+
+
+            </div>
+        </li>
+
     </ul>
 </nav>

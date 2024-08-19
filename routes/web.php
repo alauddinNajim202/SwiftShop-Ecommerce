@@ -26,15 +26,9 @@ Route::get('admin', [AuthController::class, 'login'])->name('admin.auth.login');
 Route::post('admin', [AuthController::class, 'auth_admin_login'])->name('admin.auth_admin_login');
 Route::get('admin/logout', [AuthController::class, 'auth_admin_logout'])->name('admin.auth_admin_logout');
 
-Route::get('admin/dashboard', function () {
-
-    if(!empty(Auth::check()) && Auth::user()->is_admin == 1){
+// middleware
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('admin/dashboard', function () {
         return view('admin.dashboard');
-    }else{
-        return redirect()->route('admin.auth.login');
-    }
-
-
-})->name('admin.dashboard');
-
-
+    })->name('admin.dashboard');
+});

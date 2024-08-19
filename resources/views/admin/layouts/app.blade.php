@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard 2</title>
+
+    <title> @yield('title','Swift Shop | Dashboard') </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -71,6 +72,8 @@
     <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('assets/dist/js/pages/dashboard2.js') }}"></script>
+
+    @yield('scripts')
 </body>
 
 </html>

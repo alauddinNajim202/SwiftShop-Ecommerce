@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Route::get('admin/', function () {
     return view('admin.auth.login');
-});
+})->name('admin.auth.login');
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
-});
+})->name('admin.dashboard');
 
 

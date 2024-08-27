@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -17,10 +18,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    use SoftDeletes;
+
     protected $fillable = [
         'name',
         'email',
         'password',
+        'is_admin',
+        'status',
     ];
 
     /**
@@ -41,4 +46,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    static public  function getAdmin(){
+        return User::select('users.*')
+                    ->where('is_admin', '=', 1)
+                    ->orderBy('id', 'desc')
+                    ->whereNull('deleted_at')
+                    ->get();
+    }
+
+    static public  function getSingleAdmin($id){
+        return User::find($id);
+    }
 }

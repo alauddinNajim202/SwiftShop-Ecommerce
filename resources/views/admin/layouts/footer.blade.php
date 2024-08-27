@@ -4,7 +4,7 @@
 </aside>
 
 <footer class="main-footer">
-    <strong>Copyright &copy; 2023-2024 <a href="#">Swift shop</a>.</strong>
+    <strong>Copyright &copy; {{ date('Y') - 1 }} - {{ date('Y') }} <a href="#">Swift shop</a>.</strong>
     All rights reserved.
 
 </footer>

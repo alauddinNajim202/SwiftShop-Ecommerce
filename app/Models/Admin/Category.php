@@ -31,7 +31,7 @@ class Category extends Model
                     ->get();
     }
 
-    static public function getSingleAdmin($id){
+    static public function getSingleCategory($id){
         return Category::find($id);
     }
 }

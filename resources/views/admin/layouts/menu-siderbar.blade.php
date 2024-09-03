@@ -56,6 +56,17 @@
                 </li>
 
                 <li class="nav-item menu-open">
+                    <a href="{{ route('brand.index') }}" class="nav-link @if (Request::segment(1) == 'sub-category' &&Request::segment(2) == 'list') active @endif ">
+                        <i class="nav-icon far fa-plus-square"></i>
+
+                        <p>
+                           Brand
+                        </p>
+
+                    </a>
+                </li>
+
+                <li class="nav-item menu-open">
                     <a href="{{ route('product.index') }}" class="nav-link @if (Request::segment(1) == 'product' &&Request::segment(2) == 'list' ) active @endif ">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>

@@ -79,7 +79,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::getSingleAdmin($id);
+        $category = Category::getSingleCategory($id);
         return view('admin.category.edit', compact('category'));
     }
 
@@ -129,7 +129,7 @@ class CategoryController extends Controller
      */
     public function delete($id)
     {
-        $user = Category::getSingleAdmin($id);
+        $user = Category::getSingleCategory($id);
         $user->delete();
         return redirect()->route('category.index')->with('success', 'Category deleted successfully!');
     }

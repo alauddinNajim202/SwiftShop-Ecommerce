@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
@@ -74,6 +75,14 @@ Route::group(['middleware' => 'admin'], function () {
 
 
 
+
+    // brand resource route
+    Route::get('brand/list', [BrandController::class, 'index'])->name('brand.index');
+    Route::get('brand/create', [BrandController::class, 'create'])->name('brand.create');
+    Route::post('brand/store', [BrandController::class, 'store'])->name('brand.store');
+    Route::get('brand/edit/{id}', [BrandController::class, 'edit'])->name('brand.edit');
+    Route::post('brand/update/{id}', [BrandController::class, 'update'])->name('brand.update');
+    Route::get('brand/delete/{id}', [BrandController::class, 'delete'])->name('brand.delete');
 
 
 

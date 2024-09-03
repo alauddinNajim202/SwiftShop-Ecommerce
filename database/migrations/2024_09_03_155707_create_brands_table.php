@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
+            $table->date('action_date')->nullable();
+
             $table->string('name');
             $table->string('slug');
             $table->string('meta_title')->nullable();

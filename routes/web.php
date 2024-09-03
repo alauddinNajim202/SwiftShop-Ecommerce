@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubCategoryController;
 
 /*
@@ -61,6 +62,16 @@ Route::group(['middleware' => 'admin'], function () {
      Route::get('sub-category/edit/{id}', [SubCategoryController::class, 'edit'])->name('sub_category.edit');
      Route::post('sub-category/update/{id}', [SubCategoryController::class, 'update'])->name('sub_category.update');
      Route::get('sub-category/delete/{id}', [SubCategoryController::class, 'delete'])->name('sub_category.delete');
+
+
+    // product resource route
+    Route::get('product/list', [ProductController::class, 'index'])->name('product.index');
+    Route::get('product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+
 
 
 

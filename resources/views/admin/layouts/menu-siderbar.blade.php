@@ -36,78 +36,35 @@
                     </a>
                 </li>
 
-
-                <li class="nav-item @if (Request::routeIs('admin.index') || Request::is('*')) menu-open @endif">
-                    <a href="#" class="nav-link @if (Request::routeIs('admin.index') || Request::is('*')) active @endif">
-                        <i class="nav-icon fas fa-users"></i>
+                <li class="nav-item menu-open">
+                    <a href="{{ route('category.index') }}" class="nav-link @if (Request::segment(1) == 'category' &&Request::segment(2) == 'list') active @endif ">
+                        <i class="nav-icon fas fa-list-alt"></i>
                         <p>
-                            Admin
-                            <i class="fas fa-angle-left right"></i>
+                            Category
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.index') }}" class="nav-link @if (Request::routeIs('admin.index')) active @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.create') }}" class="nav-link @if (Request::routeIs('admin.create')) active @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>New</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
-
-                <li class="nav-item @if (Request::routeIs('category.index') || Request::is('*')) menu-open @endif">
-                    <a href="#" class="nav-link @if (Request::routeIs('category.index') || Request::is('*')) active @endif">
-                        <i class="nav-icon fas fa-list"></i>
-                        <p>
-                             Category
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('category.index') }}" class="nav-link @if (Request::routeIs('category.index')) active @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('category.create') }}" class="nav-link @if (Request::routeIs('category.create')) active @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>New</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item @if (Request::routeIs('sub_category.index') || Request::is('*')) menu-open @endif">
-                    <a href="#" class="nav-link @if (Request::routeIs('sub_category.index') || Request::is('*')) active @endif">
-                        <i class="nav-icon fas fa-list"></i>
+                <li class="nav-item menu-open">
+                    <a href="{{ route('sub_category.index') }}" class="nav-link @if (Request::segment(1) == 'sub-category' &&Request::segment(2) == 'list') active @endif ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Sub Category
-                            <i class="fas fa-angle-left right"></i>
                         </p>
+
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('sub_category.index') }}" class="nav-link @if (Request::routeIs('sub_category.index')) active @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('sub_category.create') }}" class="nav-link @if (Request::routeIs('sub_category.create')) active @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>New</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
+
+                <li class="nav-item menu-open">
+                    <a href="{{ route('product.index') }}" class="nav-link @if (Request::segment(1) == 'product' &&Request::segment(2) == 'list' ) active @endif ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Product
+                        </p>
+
+                    </a>
+                </li>
+
 
 
 

@@ -5,9 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubCategoryController;
 
 /*
@@ -83,6 +84,16 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('brand/edit/{id}', [BrandController::class, 'edit'])->name('brand.edit');
     Route::post('brand/update/{id}', [BrandController::class, 'update'])->name('brand.update');
     Route::get('brand/delete/{id}', [BrandController::class, 'delete'])->name('brand.delete');
+
+    // color resource route
+    Route::get('color/list', [ColorController::class, 'index'])->name('color.index');
+    Route::get('color/create', [ColorController::class, 'create'])->name('color.create');
+    Route::post('color/store', [ColorController::class, 'store'])->name('color.store');
+    Route::get('color/edit/{id}', [ColorController::class, 'edit'])->name('color.edit');
+    Route::post('color/update/{id}', [ColorController::class, 'update'])->name('color.update');
+    Route::get('color/delete/{id}', [ColorController::class, 'delete'])->name('color.delete');
+
+
 
 
 

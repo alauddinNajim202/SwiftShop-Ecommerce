@@ -14,24 +14,24 @@ class Category extends Model
     protected $fillable = [
         'name',
         'slug',
-
-
-                'status' ,
-                'meta_title' ,
-                'meta_icon',
-                'meta_keyword' ,
-                'meta_description',
-                'order_level',
-                'created_by'
+        'status',
+        'meta_title',
+        'meta_icon',
+        'meta_keyword',
+        'meta_description',
+        'order_level',
+        'created_by'
     ];
-    static public  function getCategory(){
+    static public  function getCategory()
+    {
         return Category::select('categories.*')
-                    ->orderBy('id', 'desc')
-                    ->whereNull('deleted_at')
-                    ->get();
+            ->orderBy('id', 'desc')
+            ->whereNull('deleted_at')
+            ->get();
     }
 
-    static public function getSingleCategory($id){
+    static public function getSingleCategory($id)
+    {
         return Category::find($id);
     }
 }

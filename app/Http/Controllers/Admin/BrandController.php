@@ -46,6 +46,7 @@ class BrandController extends Controller
             // Create a new admin
             $admin = Brand::create([
                 'name' => $request->name,
+                'action_date' => $request->action_date,
                 'slug' => $request->slug,
                 'status' => $request->status,
                 'meta_title' => $request->meta_title,

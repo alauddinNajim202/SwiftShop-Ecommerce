@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label for="name">Date </label>
                     <input type="text" class="form-control text-dark"  id="action_date"
-                        name="action_date" placeholder="Enter meta icon"
+                        name="action_date" placeholder=""
                         class="@error('action_date') is-invalid @enderror" value="{{ $brand ? $brand->action_date : '' }}">
 
                     @error('action_date')

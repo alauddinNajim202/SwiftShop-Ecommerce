@@ -75,6 +75,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
 
+    Route::get('/get-subcategories/{category_id}', [ProductController::class, 'get_subcategory'])->name('get.subcategories');
 
 
     // brand resource route

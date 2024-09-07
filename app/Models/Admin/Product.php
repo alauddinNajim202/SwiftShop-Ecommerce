@@ -10,6 +10,26 @@ class Product extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    protected $fillable = [
+        'title',
+        'category_id',
+        'sub_category_id',
+        'brand_id',
+        'action_date',
+        'slug',
+        'sku',
+        'status',
+        'old_price',
+        'price',
+        'quantity',
+        'short_description',
+        'description',
+        'additional_information',
+        'shipping_return',
+
+        'order_level',
+        'created_by'
+    ];
 
 
     static function checkSlug($slug){
@@ -34,4 +54,16 @@ class Product extends Model
     static function getSingleProduct($id){
         return Product::find($id);
     }
+
+    // colors
+    public function colors() {
+        return $this->hasMany(ProductColor::class, 'product_id');
+    }
+
+
+    // size
+    public function sizes() {
+        return $this->hasMany(ProductSize::class, 'product_id');
+    }
+
 }

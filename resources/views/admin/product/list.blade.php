@@ -58,7 +58,7 @@
                         <td>{{ $product->brand_id }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->quantity }}</td>
-                        <td>{{ $product->short_description }}</td>
+                        <td>{!! $product->short_description !!}</td>
                         <td>{{ $product->user_name}}</td>
                         <td>{!! $product->status == 0 ? "<span class='text-danger'>Active</span>" : 'Inactive' !!}</td>
 

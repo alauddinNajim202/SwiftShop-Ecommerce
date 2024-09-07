@@ -49,7 +49,7 @@
                         <td>{{ $i++ }}</td>
                         <td>
                             {{ $color->color_name }}
-                            <span style="display:inline-block; width:20px; height:20px; background-color:{{ $color->color_code }}; margin-left:10px; border:1px solid #000; margin-top:5px;"></span>
+                            <span style="display:inline-block; width:20px; height:12px; background-color:{{ $color->color_code }}; margin-left:10px; border:1px solid #000; margin-top:5px;"></span>
                         </td>
                         </td>
                         <td>{{ $color->color_code }}</td>
